@@ -1,4 +1,4 @@
-# proyecto_gastos
+#  Aplicación móvil para registrar y gestionar los gastos personales
 
 APP para la gestion de gastos personales
 
