@@ -31,6 +31,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _deleteExpense(int id) async {
     await DatabaseHelper().deleteExpense(id);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Gasto eliminado exitosamente', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.green,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        duration: Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+        margin: EdgeInsets.all(10),
+      ),
+    );
     _loadExpenses(); //Actualiza la lista de gastos
   }
 
@@ -39,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     /*Widget principal*/
     return Scaffold(
-      backgroundColor: MainColor,
+      backgroundColor: whiteColor,
 
       //Cuerpo de la pagina de inicio
       body: Body(
